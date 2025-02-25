@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EASE Group</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/perspective.css" rel="stylesheet" />
+    <link href="css/people.css" rel="stylesheet" />
+    <link href="css/navbar.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
+    <style>
+        /* 新增导航栏固定样式 */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        body {
+            padding-top: 56px;
+        }
+        
+        /* 原有body样式保持不变 */
+        body {
+            font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        /* 主标题样式 */
+        h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 2.5em;
+            font-weight: 700;
+            color: #1a237e;
+            margin-bottom: 1em;
+        }
+
+        /* 二级标题样式 */
+        h2 {
+            font-family: Arial, sans-serif;
+            font-size: 2em;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 1em 0;
+        }
+
+        /* 三级标题样式 */
+        h3 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-size: 1.5em;
+            color: #34495e;
+            margin-bottom: 0.8em;
+        }
+
+        /* 正文段落样式 */
+        p {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #3c4858;
+        }
+
+        /* 按钮文字样式 */
+        .btn {
+            font-family: 'Source Sans Pro', Arial, sans-serif;
+            font-weight: 600;
+        }
+
+        /* 强调文本样式 */
+        strong, b {
+            color: #1a237e;
+        }
+
+        /* 链接样式 */
+        a {
+            color: #1a237e;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #3949ab;
+        }
+
+        /* 期刊名称和重要术语样式 */
+        .journal-name, .technical-term {
+            font-style: italic;
+            color: #34495e;
+        }
+
+        /* 引用文本样式 */
+        blockquote {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            color: #546e7a;
+            border-left: 4px solid #1a237e;
+            padding-left: 1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Include the navigation bar -->
+    <div id="navbar-placeholder"></div>
+    <script>
+      fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('navbar-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading navbar:', error));
+    </script>
+     
+    <main>
+        <div class="welcome-section">
+            <h1 class="text-center mb-1"></h1>
+
+            <style>
+                .fixed-size-img {
+                  width: 300px;
+                  height: 220px;
+                  object-fit: cover;
+                }
+                .title-spacing {
+                  margin-top: 8px;   /* 进一步减少标题上方的外边距 */
+                  color: #000000;    /* 藏青色 */
+                  font-family: Arial, Times, serif;  /* 新罗马字体 */
+                  font-size: 22px;   /* 定义字号为24px */
+                }
+            </style>
+              
+              <div class="row text-center mb-2">
+                <div class="col-md-4">
+                  <h3 class="title-spacing">Volatile organic compounds</h3>
+                  <img src="images/主页1.png" class="fixed-size-img" alt="Description of Image 1" />
+                </div>
+                <div class="col-md-4">
+                  <h3 class="title-spacing">Tropospheric ozone</h3>
+                  <img src="images/主页2.png" class="fixed-size-img" alt="Description of Image 2" />
+                </div>
+                <div class="col-md-4">
+                  <h3 class="title-spacing">Organic aerosol</h3>
+                  <img src="images/主页3.png" class="fixed-size-img" alt="Description of Image 3" />
+                </div>
+              </div>
+            
+            <!-- Welcome Text -->
+            <div class="welcome-section">
+                <h2 style="font-family: Arial, sans-serif;">ABOUT EASE</h2>
+                <p>
+                EASE, short for Emerging Air pollution and Sustainable Environment, 
+                delves into the intricate relationships between air pollution, 
+                climate change, and environmental sustainability. 
+                Air pollution profoundly impacts the sustainability of our environment and is intricately linked to climate change. 
+                Global warming exacerbates air pollution by intensifying emissions, 
+                accelerating chemical reaction rates, and altering atmospheric circulations. 
+                For instance, biogenic terpenoids contribute to approximately 60% of ozone (O3) and secondary organic aerosol (SOA) formation during the summer in Los Angeles, 
+                with their contributions increasing significantly with rising temperatures (Pfannerstill et al., Science, 2024).
+                </p>
+                <p>
+                Conversely, climate actions are causing a significant shift in air pollution patterns. 
+                Since the industrial revolution, fossil fuel combustion has been a major source of air pollution. 
+                However, as the world moves away from fossil fuels to mitigate both air pollution and climate warming, 
+                previously underappreciated sources of air pollution, 
+                such as volatile chemical products (McDonald et al., Science, 2018), are becoming more prominent.
+                </p>
+                <p>
+                We classify sources that are climate-sensitive, underappreciated, or previously masked by fossil fuel emissions as Emerging Air Pollution (EAP). 
+                EAP sources are not necessarily new, but they are gaining significance as the planet warms and the 'tide' of fossil fuel burning recedes. 
+                Unfortunately, our understanding of these changes and their impacts on air quality remains limited, underscoring the importance of our research mission.
+                </p>
+
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
+
