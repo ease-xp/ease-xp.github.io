@@ -50,10 +50,10 @@ body {
 }
 
 .profile-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
 }
 
 .profile-info {
@@ -121,4 +121,14 @@ body {
         max-width: 100%;
         margin-bottom: 2rem;
     }
+}
+
+/* 新增统一的学生页面样式 */
+.education ul {
+    padding-left: 1.5rem;
+}
+
+.contact a {
+    color: #2c3e50;
+    text-decoration: none;
 }
