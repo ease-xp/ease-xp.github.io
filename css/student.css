@@ -40,20 +40,22 @@ body {
 /* 个人资料布局 */
 .student-profile {
     display: flex;
-    gap: 3rem;
+    gap: 0rem;
     margin-bottom: 2rem;
     padding: 0 15px;
 }
 
 .profile-image-container {
-    flex: 0 0 300px;
+    flex: 0 0 360px;
 }
 
 .profile-image {
     margin-top: 10px;
-    width: 260px;
-    height: 260px;
+    width: 320px;
+    height: 320px;
     object-fit: cover;
+    border-radius: 12px;  /* 添加圆角效果 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* 添加柔和的阴影效果 */
 }
 
 .profile-info {
@@ -64,7 +66,6 @@ body {
     color: #2c3e50;
     font-size: 2rem;
     margin-bottom: 2rem;
-    border-bottom: 2px solid black;
     padding-bottom: 0.5rem;
 }
 
@@ -131,4 +132,61 @@ body {
 .contact a {
     color: #2c3e50;
     text-decoration: none;
+}
+
+/* 新增导航栏固定样式 */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* 主标题样式 */
+.section-title {
+    font-family: Arial, serif;
+    font-size: 2.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.2em;
+    text-align: left;
+    margin-left: 15px;
+}
+
+/* 团队成员卡片样式 */
+.card-title {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    font-size: 1.2em;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.card-title p {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0.5em;
+    text-align: center;
+}
+
+/* 间距样式 */
+.spacer {
+    height: 20px;
+}
+
+/* 期刊名称斜体样式 */
+.journal-name {
+    font-style: italic;
+}
+
+/* 链接样式 */
+.links a {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-weight: 600;
+}
+
+/* 标题全局颜色统一 */
+h1, h2, h3, h4, h5, h6 {
+    color: #2C3E50;
 }
