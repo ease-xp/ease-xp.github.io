@@ -87,5 +87,3 @@ npm install
 ```bash
 npx live-server --port=3000
 ```
-
-
