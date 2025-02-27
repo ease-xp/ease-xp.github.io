@@ -5,7 +5,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
-    <title>A perspective article published in One Earth</title>
+    <title>News - EASE</title>
     <link
       href="../css/bootstrap.min.css"
       rel="stylesheet" />
@@ -13,7 +13,10 @@
       href="../css/style.css"
       rel="stylesheet" />
     <link
-      href="../css/news_topic.css"
+      href="../css/news-topic.css"
+      rel="stylesheet" />
+    <link
+      href="../css/projects-topic.css"
       rel="stylesheet" />
     <link href="../css/navbar.css" rel="stylesheet" />
     <style>
@@ -38,13 +41,150 @@
         font-size: 2.2em;
         font-weight: 600;
         color: #2c3e50;
-        margin-bottom: 15px;
-        text-align: left;
+        margin-bottom: 10px;
+        text-align: justify;
         margin-left: -15px;
         display: inline-block;
+        width: 100%;
+      }
+
+      /* 调整主内容区域样式 */
+      .projects-content {
+        max-width: 870px;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      /* 确保文本两端对齐 */
+      .projects-text {
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #3c4858;
+        text-align: justify;
+        margin-bottom: 1.5rem;
+      }
+
+      /* 调整图片和文字布局 */
+      .content-with-image {
+        display: block;
+        position: relative;
+        margin: 2rem 0;
+      }
+
+      .text-content {
+        margin: 0;
+      }
+
+      .image-content {
+        float: right;
+        width: 300px;
+        margin: 0 0 20px 20px;
+      }
+
+      .content-with-image.image-left .image-content {
+        float: left;
+        margin: 0 20px 20px 0;
+      }
+
+      .projects-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .figure-caption {
+        text-align: center;
+        margin-top: 8px;
+        font-size: 0.9em;
+        color: #666;
+      }
+
+      /* 清除浮动 */
+      .projects-section::after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* 修改小标题样式 */
+      .section-title {
+        font-family: Arial, serif;
+        font-size: 1.8em;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-bottom: 0.9rem;
+        margin-top: 1.8rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #3498db;
+      }
+
+      /* 调整项目区域的间距 */
+      .projects-section {
+        margin-bottom: 2.4rem;
+      }
+
+      /* 修改相关出版物标题样式 */
+      .related-publications h3 {
+        font-family: Arial, serif;
+        font-size: 1.3em;
+        font-weight: 600;
+        color: #2c3e50;
+        margin-top: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      /* 修改出版物条目样式 */
+      .publication-item {
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #3c4858;
+        margin-bottom: 1rem;
+      }
+
+      /* 修改列表样式 */
+      .projects-text ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .projects-text li {
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        font-size: 1.1em;
+        line-height: 1.8;
+        color: #3c4858;
+        margin-bottom: 0.8rem;
+      }
+
+      /* 修改链接样式 */
+      a {
+        color: #1a237e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      a:hover {
+        color: #3949ab;
+        text-decoration: underline;
+      }
+
+      /* 确保导航栏固定在顶部 */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+      }
+
+      /* 调整body的顶部内边距 */
+      body {
+        padding-top: 56px;
+        margin-top: 0;
       }
     </style>
-    
   </head>
   <body>
     <!-- Include the navigation bar -->
@@ -57,7 +197,7 @@
           // Adjust links based on the current environment and directory
           let basePath = '/';
           // Remove 'students/' prefix for local development
-          if (window.location.pathname.includes('/news/') && window.location.hostname !== '/') {
+          if (window.location.pathname.includes('/projects/') && window.location.hostname !== '/') {
             basePath = '../';
           }
           document.querySelectorAll('.navbar-nav a').forEach(link => {
