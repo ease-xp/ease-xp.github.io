@@ -1,6 +1,7 @@
 .navbar-brand {
   font-weight: bold;
-  margin-left: 10em !important;  /* 确保EASE的缩进 */
+  color: #666;
+  margin-left: 0em !important;  /* 确保EASE的缩进 */
 }
 
 .nav-item.dropdown .nav-link.dropdown-toggle {
