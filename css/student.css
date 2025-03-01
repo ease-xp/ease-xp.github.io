@@ -1,6 +1,19 @@
+:root {
+    --primary-font: 'Source Sans Pro', Arial, sans-serif;
+    --heading-font: 'Georgia', 'Times New Roman', serif;
+    --primary-color: #2c3e50;
+    --text-color: #405d7b;  /* 添加一个更浅的文本颜色 */
+    --max-content-width: 900px;
+    --standard-spacing: 2rem;
+    --secondary-color: #3c4858;
+    --standard-margin: 15px;
+    --standard-font-size: 1.1em;
+    --standard-line-height: 1.8;
+}
+
 /* 页面整体基础字体 */
 body {
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
+    font-family: var(--primary-font);
     line-height: 1.6;
     min-height: 100vh;  /* 确保body至少有一个视口高度 */
     overflow-y: auto;   /* 允许垂直滚动 */
@@ -11,16 +24,16 @@ body {
     background: none;
     height: auto;
     margin-top: 56px;
-    max-width: 900px;
+    max-width: var(--max-content-width);
     margin: 56px auto 0;
     padding: 0;
 }
 
 .student-header h1 {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: var(--heading-font);
     font-size: 2.2em;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--primary-color);
     margin-bottom: 1.2em;
     text-align: left;
     margin-left: 15px;
@@ -31,7 +44,7 @@ body {
 /* 内容区域样式 */
 .student-content {
     padding: 2rem 0;
-    max-width: 900px;
+    max-width: var(--max-content-width);
     margin: 0 auto;
     min-height: calc(100vh - 56px);  /* 确保内容区域有足够的高度支持滚动 */
     overflow-y: auto;  /* 允许内容区域垂直滚动 */
@@ -63,7 +76,7 @@ body {
 }
 
 .profile-info h2 {
-    color: #2c3e50;
+    color: var(--primary-color);
     font-size: 2rem;
     margin-bottom: 2rem;
     padding-bottom: 0.5rem;
@@ -75,7 +88,7 @@ body {
 }
 
 .info-section h3 {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: var(--heading-font);
     font-size: 1.4rem;
     font-weight: 600;
     color: #2c3e50;
@@ -89,18 +102,18 @@ body {
 }
 
 .info-section li {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: var(--heading-font);
     font-size: 1.1em;
     line-height: 1.8;
-    color: #3c4858;
+    color: var(--text-color);
     margin-bottom: 0.8rem;
 }
 
 .info-section p {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: var(--heading-font);
     font-size: 1.1em;
     line-height: 1.8;
-    color: #3c4858;
+    color: var(--text-color);
     text-align: justify;
 }
 
@@ -130,7 +143,7 @@ body {
 }
 
 .contact a {
-    color: #2c3e50;
+    color: var(--primary-color);
     text-decoration: none;
 }
 
@@ -148,7 +161,7 @@ body {
     font-family: Arial, serif;
     font-size: 2.2em;
     font-weight: 600;
-    color: #2c3e50;
+    color: var(--primary-color);
     margin-bottom: 1.2em;
     text-align: left;
     margin-left: 15px;
@@ -156,16 +169,16 @@ body {
 
 /* 团队成员卡片样式 */
 .card-title {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: var(--heading-font);
     font-size: 1.2em;
     color: #2c3e50;
     text-align: center;
 }
 
 .card-title p {
-    font-family: 'Source Sans Pro', Arial, sans-serif;
+    font-family: var(--heading-font);
     font-size: 0.9em;
-    color: #666;
+    color: var(--text-color);
     margin-top: 0.5em;
     text-align: center;
 }
@@ -188,5 +201,12 @@ body {
 
 /* 标题全局颜色统一 */
 h1, h2, h3, h4, h5, h6 {
-    color: #2C3E50;
+    color: var(--primary-color);
+}
+
+.text-content {
+    font-family: var(--heading-font);
+    font-size: var(--standard-font-size);
+    line-height: var(--standard-line-height);
+    color: var(--text-color);
 }
