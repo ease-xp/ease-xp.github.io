@@ -88,10 +88,10 @@ p {
 
 /* Card Styles */
 .card {
-    height: 100%;
+    height: 320px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 3rem;
+    margin-bottom: 0rem;
 }
 
 .card-body {
