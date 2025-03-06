@@ -88,7 +88,7 @@ p {
 
 /* Card Styles */
 .card {
-    height: 320px;
+    height: 340px;
     display: flex;
     flex-direction: column;
     margin-bottom: 0rem;
