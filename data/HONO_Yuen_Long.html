@@ -1,259 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0" />
-    <title>Data - EASE</title>
-    <link
-      href="../css/bootstrap.min.css"
-      rel="stylesheet" />
-    <link
-      href="../css/style.css"
-      rel="stylesheet" />
-    <link
-      href="../css/news-topic.css"
-      rel="stylesheet" />
-    <link
-      href="../css/projects-topic.css"
-      rel="stylesheet" />
-    <link href="../css/navbar.css" rel="stylesheet" />
-    <style>
-      /* 移除标题背景和调整样式 */
-      .projects-topic-header {
-        background: none;
-        height: auto;
-        padding: 0;
-        margin-top: 56px;
-        width: 100%;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HONO - Yuen Long - EASE</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../css/theme.css" rel="stylesheet" />
+  <link href="../css/navbar.css" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('../navbar.html')
+    .then(r => r.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+      document.querySelectorAll('.navbar-nav a').forEach(link => {
+        link.setAttribute('href', '../' + link.getAttribute('href'));
+      });
+      const brand = document.querySelector('.navbar-brand');
+      if (brand) brand.setAttribute('href', '../index.html');
+      const active = document.querySelector('.nav-link[href$="data.html"]');
+      if (active) active.classList.add('active');
+    })
+    .catch(e => console.error('Error loading navbar:', e));
+</script>
 
-      .projects-topic-header .container {
-        max-width: 870px;
-        margin: 0 auto;
-        padding: 0;
-        text-align: left;
-      }
+<header class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">Dataset</p>
+    <h1>HONO · Yuen Long</h1>
+  </div>
+</header>
 
-      .projects-topic-header h1 {
-        font-family: Arial, serif;
-        font-size: 2.2em;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 10px;
-        text-align: justify;
-        margin-left: -15px;
-        display: inline-block;
-        width: 100%;
-      }
+<main class="page-section">
+  <div class="wrap read article">
+    <a class="back-link" href="../data.html">← All data</a>
 
-      /* 调整主内容区域样式 */
-      .projects-content {
-        max-width: 870px;
-        margin: 0 auto;
-        padding: 0;
-      }
+    <figure class="article-figure float-right">
+      <img src="../images/YuenLong.jpg" alt="HONO - Yuen Long instrument" />
+    </figure>
 
-      /* 确保文本两端对齐 */
-      .projects-text {
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 1.1em;
-        line-height: 1.8;
-        color: #3c4858;
-        text-align: justify;
-        margin-bottom: 1.5rem;
-      }
+    <dl class="meta-list">
+      <dt>Sampling period</dt><dd>13/12/2024 - 13/1/2025</dd>
+      <dt>Sampling location</dt><dd>Yuen Long Air Quality Monitoring Station - Hong Kong, China</dd>
+      <dt>Geographic coordinates</dt><dd>22°26′43″ N, 114°1′21″ E</dd>
+      <dt>Equipment</dt><dd>LOPAP-O3 (QUMA Elektronik &amp; Analytik GmbH)</dd>
+      <dt>Data size</dt><dd>620 hourly data</dd>
+      <dt>Related data</dt><dd>Trace gases (NO<sub>2</sub>, O<sub>3</sub>, SO<sub>2</sub>), particulate matter (PM<sub>2.5</sub>, PM<sub>10</sub>), HCHO, CH<sub>4</sub>, Air moisture content on 32 days</dd>
+    </dl>
+  </div>
+</main>
 
-      /* 调整图片和文字布局 */
-      .content-with-image {
-        display: block;
-        position: relative;
-        margin: 2rem 0;
-      }
-
-      .text-content {
-        margin: 0;
-      }
-
-      .image-content {
-        float: right;
-        width: 300px;
-        margin: 0 0 20px 20px;
-      }
-
-      .content-with-image.image-left .image-content {
-        float: left;
-        margin: 0 20px 20px 0;
-      }
-
-      .projects-image {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
-      .figure-caption {
-        text-align: center;
-        margin-top: 8px;
-        font-size: 0.9em;
-        color: #666;
-      }
-
-      /* 清除浮动 */
-      .projects-section::after {
-        content: "";
-        display: table;
-        clear: both;
-      }
-
-      /* 修改小标题样式 */
-      .section-title {
-        font-family: Arial, serif;
-        font-size: 1.8em;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 0.9rem;
-        margin-top: 1.8rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 2px solid #3498db;
-      }
-
-      /* 调整项目区域的间距 */
-      .projects-section {
-        margin-bottom: 2.4rem;
-      }
-
-      /* 修改相关出版物标题样式 */
-      .related-publications h3 {
-        font-family: Arial, serif;
-        font-size: 1.3em;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-top: 1.5rem;
-        margin-bottom: 1rem;
-      }
-
-      /* 修改出版物条目样式 */
-      .publication-item {
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 1.1em;
-        line-height: 1.8;
-        color: #3c4858;
-        margin-bottom: 1rem;
-      }
-
-      /* 修改列表样式 */
-      .projects-text ul {
-        padding-left: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .projects-text li {
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 1.1em;
-        line-height: 1.8;
-        color: #3c4858;
-        margin-bottom: 0.8rem;
-      }
-
-      /* 修改链接样式 */
-      a {
-        color: #1a237e;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      a:hover {
-        color: #3949ab;
-        text-decoration: underline;
-      }
-
-      /* 确保导航栏固定在顶部 */
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-      }
-
-      /* 调整body的顶部内边距 */
-      body {
-        padding-top: 56px;
-        margin-top: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Include the navigation bar -->
-    <div id="navbar-placeholder"></div>
-    <script>
-      fetch('../navbar.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('navbar-placeholder').innerHTML = data;
-          // Adjust links based on the current environment and directory
-          let basePath = '/';
-          // Remove 'students/' prefix for local development
-          if (window.location.pathname.includes('/projects/') && window.location.hostname !== '/') {
-            basePath = '../';
-          }
-          document.querySelectorAll('.navbar-nav a').forEach(link => {
-            link.href = basePath + link.getAttribute('href');
-          });
-          // Adjust brand link
-          const brandLink = document.querySelector('.navbar-brand');
-          if (brandLink) {
-            brandLink.href = basePath + 'index.html';
-          }
-        })
-        .catch(error => console.error('Error loading navbar:', error));
-    </script>
-
-    <main class="container projects-content">
-      <div class="projects-section">
-        <h2 class="section-title"><strong>HONO - Yuen Long</strong></h2>
-        <img src="../images/YuenLong.jpg" alt="Description of image" style="float: right; margin-left: 15px; width: 345px; height: auto;">
-        <p style="font-size: 1.3em;font-family: Century Gothic;">
-          <strong>Sampling period:</strong> 13/12/2024 - 13/1/2025
-        </p>
-        <p style="font-size: 1.3em;font-family: Century Gothic;">
-          <strong>Sampling location:</strong> Yuen Long Air Quality Monitoring Station - Hong Kong, China
-        </p>
-        <p style="font-size: 1.3em;font-family: Century Gothic;">
-          <strong>Geographic coordinates:</strong> 22°26′43″ N, 114°1′21″ E
-        </p>
-        <p style="font-size: 1.3em;font-family: Century Gothic;">
-          <strong>Equipment:</strong> LOPAP-O3 (QUMA Elektronik & Analytik GmbH)
-        </p>
-        <p style="font-size: 1.3em;font-family: Century Gothic;">
-          <strong>Data size:</strong> 620 hourly data
-        </p>
-        <p style="font-size: 1.3em;font-family: Century Gothic;text-align: justify;">
-          <strong>Related Data:</strong> Trace gases (NO<sub>2</sub>, O<sub>3</sub>, SO<sub>2</sub>), particulate matter (PM<sub>2.5</sub>, PM<sub>10</sub>), HCHO, CH<sub>4</sub>, Air moisture content on 32 days
-        </p>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="mark">EASE</div>
+        <p style="margin:0;">Emerging Air pollution and Sustainable Environment — studying the changing chemistry of the troposphere.</p>
       </div>
-    </header>
-
-    <div class="related-publications">
-      <h2 class="section-title">Related Publications:</h2>
-      <!--<div class="publication-item">
-        <p style="line-height: 1.3;margin: 0;">
-        <a href="https://pubs.acs.org/doi/full/10.1021/acs.est.4c05656">
-          <strong>Lyu, X.</strong>*, Li, H., Lee, S.-C., Xiong, E., Guo, H., Wang, T. and Joost de Gouw (2024). Significant Biogenic Source of Oxygenated Volatile Organic Compounds and the Impacts on Photochemistry at a Regional Background Site in South China. <i>Environmental Science & Technology</i>, 58(45).
-        </a>
-        </p>
-      </div>-->
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="../index.html">Home</a>
+        <a href="../people.html">People</a>
+        <a href="../news.html">News</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../data.html">Data</a>
+        <a href="../opportunities.html">Opportunities</a>
+      </nav>
     </div>
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script type="module" src="/main.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
-        <script src="../js/search.js"></script>
-            
-      </body>
-    </html>
+    <div class="footer__bottom">© <span id="yr"></span> EASE Research Group. All rights reserved.</div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../js/search.js"></script>
+</body>
+</html>
