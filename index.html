@@ -3,106 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EASE Group</title>
+    <title>EASE — Emerging Air pollution and Sustainable Environment</title>
+    <meta name="description" content="EASE studies how a warming climate and the retreat from fossil fuels are reshaping air pollution — volatile organic compounds, tropospheric ozone, and organic aerosol." />
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/perspective.css" rel="stylesheet" />
-    <link href="css/people.css" rel="stylesheet" />
+    <link href="css/theme.css" rel="stylesheet" />
     <link href="css/navbar.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+Pro:wght@400;600&family=Georgia&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --home: bold;
-        }
-        /* 新增导航栏固定样式 */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        body {
-            padding-top: 56px;
-        }
-        
-        /* 原有body样式保持不变 */
-        body {
-            font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-        }
-
-        /* 主标题样式 */
-        h1 {
-            font-family: 'Playfair Display', Georgia, serif;
-            font-size: 2.5em;
-            font-weight: 700;
-            color: #1a237e;
-            margin-bottom: 1em;
-        }
-
-        /* 二级标题样式 */
-        h2 {
-            font-family: Arial, sans-serif;
-            font-size: 2em;
-            font-weight: 600;
-            color: #2c3e50;
-            margin: 1em 0;
-        }
-
-        /* 三级标题样式 */
-        h3 {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            font-size: 1.5em;
-            color: #34495e;
-            margin-bottom: 0.8em;
-        }
-
-        /* 正文段落样式 */
-        p {
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #3c4858;
-        }
-
-        /* 按钮文字样式 */
-        .btn {
-            font-family: 'Source Sans Pro', Arial, sans-serif;
-            font-weight: 600;
-        }
-
-        /* 强调文本样式 */
-        strong, b {
-            color: #1a237e;
-        }
-
-        /* 链接样式 */
-        a {
-            color: #1a237e;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        a:hover {
-            color: #3949ab;
-        }
-
-        /* 期刊名称和重要术语样式 */
-        .journal-name, .technical-term {
-            font-style: italic;
-            color: #34495e;
-        }
-
-        /* 引用文本样式 */
-        blockquote {
-            font-family: 'Georgia', serif;
-            font-style: italic;
-            color: #546e7a;
-            border-left: 4px solid #1a237e;
-            padding-left: 1em;
-        }
+      /* hero provides its own nav clearance, so cancel the global offset */
+      body { padding-top: 0; }
     </style>
 </head>
 <body>
@@ -134,71 +42,129 @@
         })
         .catch(error => console.error('Error loading navbar:', error));
     </script>
-     
+
     <main>
-        <div class="welcome-section">
-            <h1 class="text-center mb-1"></h1>
-
-            <style>
-                .fixed-size-img {
-                  width: 300px;
-                  height: 220px;
-                  object-fit: cover;
-                }
-                .title-spacing {
-                  margin-top: 8px;   /* 进一步减少标题上方的外边距 */
-                  color: #000000;    /* 藏青色 */
-                  font-family: Arial, Times, serif;  /* 新罗马字体 */
-                  font-size: 22px;   /* 定义字号为24px */
-                }
-            </style>
-              
-              <div class="row text-center mb-2">
-                <div class="col-md-4">
-                  <h3 class="title-spacing">Volatile Organic Compounds</h3>
-                  <img src="images/主页1.png" class="fixed-size-img" alt="Description of Image 1" />
-                </div>
-                <div class="col-md-4">
-                  <h3 class="title-spacing">Tropospheric Ozone</h3>
-                  <img src="images/主页2.png" class="fixed-size-img" alt="Description of Image 2" />
-                </div>
-                <div class="col-md-4">
-                  <h3 class="title-spacing">Organic Aerosol</h3>
-                  <img src="images/OrganicAerosol.png" class="fixed-size-img" alt="Description of Image 3" />
-                </div>
-              </div>
-            
-            <!-- Welcome Text -->
-            <div class="welcome-section">
-                <h2 style="font-family: Arial, sans-serif;">ABOUT EASE</h2>
-                <p style="line-height: 1.4;">
-                EASE, short for Emerging Air pollution and Sustainable Environment, 
-                delves into the intricate relationships between air pollution, 
-                climate change, and environmental sustainability. 
-                Air pollution profoundly impacts the sustainability of our environment and is intricately linked to climate change. 
-                Global warming exacerbates air pollution by intensifying emissions, 
-                accelerating chemical reaction rates, and altering atmospheric circulations. 
-                For instance, biogenic terpenoids contribute to approximately 60% of ozone (O<sub>3</sub>) and secondary organic aerosol (SOA) formation during the summer in Los Angeles, 
-                with their contributions increasing significantly with rising temperatures (Pfannerstill et al., Science, 2024).
+        <!-- ===================== HERO ===================== -->
+        <header class="hero">
+            <svg class="hero__waves" viewBox="0 0 600 320" aria-hidden="true">
+                <path d="M-20 120 C 120 60, 220 200, 360 130 S 560 70, 640 150" stroke="#e0943a"/>
+                <path d="M-20 170 C 120 110, 220 250, 360 180 S 560 120, 640 200" stroke="#c0492f"/>
+                <path d="M-20 220 C 120 160, 220 300, 360 230 S 560 170, 640 250" stroke="#9a8478"/>
+            </svg>
+            <div class="wrap hero__inner">
+                <p class="eyebrow reveal">Atmospheric Chemistry · Emerging Air Pollution</p>
+                <h1 class="reveal">Tracing the <span class="accent">emerging</span> sources reshaping the air we breathe.</h1>
+                <p class="hero__lead reveal">
+                    <strong>EASE</strong> — Emerging Air pollution and Sustainable Environment — investigates how a
+                    warming climate and the retreat from fossil fuels are transforming air pollution, from
+                    volatile organic compounds to tropospheric ozone and organic aerosol.
                 </p>
-                <p style="line-height: 1.4;">
-                Conversely, climate actions are causing a significant shift in air pollution patterns. 
-                Since the industrial revolution, fossil fuel combustion has been a major source of air pollution. 
-                However, as the world moves away from fossil fuels to mitigate both air pollution and climate warming, 
-                previously underappreciated sources of air pollution, 
-                such as volatile chemical products (McDonald et al., Science, 2018), are becoming more prominent.
-                </p>
-                <p style="line-height: 1.4;">
-                We classify sources that are climate-sensitive, underappreciated, or previously masked by fossil fuel emissions as Emerging Air Pollution (EAP). 
-                EAP sources are not necessarily new, but they are gaining significance as the planet warms and the 'tide' of fossil fuel burning recedes. 
-                Unfortunately, our understanding of these changes and their impacts on air quality remains limited, underscoring the importance of our research mission.
-                </p>
-
+                <div class="hero__actions reveal">
+                    <a class="btn-ease btn-solid" href="publications.html">Explore our research <span class="arr">→</span></a>
+                    <a class="btn-ease btn-onhero" href="opportunities.html">Join the group</a>
+                </div>
             </div>
-        </div>
-        
+        </header>
+
+        <!-- ===================== RESEARCH ===================== -->
+        <section class="section research">
+            <div class="wrap">
+                <p class="eyebrow">What we study</p>
+                <h2 style="font-size:clamp(2rem,3.4vw,2.8rem);max-width:18ch;">Three threads of a warming atmosphere.</h2>
+                <div class="research__grid">
+                    <article class="rcard">
+                        <img src="images/主页1.png" alt="Volatile organic compounds research" />
+                        <div class="rcard__body">
+                            <span class="rcard__num">01</span>
+                            <h3>Volatile Organic Compounds</h3>
+                            <div class="rcard__rule"></div>
+                        </div>
+                    </article>
+                    <article class="rcard">
+                        <img src="images/主页2.png" alt="Tropospheric ozone research" />
+                        <div class="rcard__body">
+                            <span class="rcard__num">02</span>
+                            <h3>Tropospheric Ozone</h3>
+                            <div class="rcard__rule"></div>
+                        </div>
+                    </article>
+                    <article class="rcard">
+                        <img src="images/OrganicAerosol.png" alt="Organic aerosol research" />
+                        <div class="rcard__body">
+                            <span class="rcard__num">03</span>
+                            <h3>Organic Aerosol</h3>
+                            <div class="rcard__rule"></div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== ABOUT ===================== -->
+        <section class="section about">
+            <div class="wrap about__grid">
+                <div>
+                    <p class="eyebrow">About</p>
+                    <h2>What is<br>EASE?</h2>
+                </div>
+                <div class="about__body">
+                    <p>
+                        EASE, short for <strong>Emerging Air pollution and Sustainable Environment</strong>,
+                        delves into the intricate relationships between air pollution, climate change, and
+                        environmental sustainability. Air pollution profoundly impacts the sustainability of our
+                        environment and is intricately linked to climate change. Global warming exacerbates air
+                        pollution by intensifying emissions, accelerating chemical reaction rates, and altering
+                        atmospheric circulations. For instance, biogenic terpenoids contribute to approximately
+                        60% of ozone (O<sub>3</sub>) and secondary organic aerosol (SOA) formation during the
+                        summer in Los Angeles, with their contributions increasing significantly with rising
+                        temperatures <span class="term">(Pfannerstill et al., Science, 2024)</span>.
+                    </p>
+                    <p>
+                        Conversely, climate actions are causing a significant shift in air pollution patterns.
+                        Since the industrial revolution, fossil fuel combustion has been a major source of air
+                        pollution. However, as the world moves away from fossil fuels to mitigate both air
+                        pollution and climate warming, previously underappreciated sources of air pollution, such
+                        as volatile chemical products <span class="term">(McDonald et al., Science, 2018)</span>,
+                        are becoming more prominent.
+                    </p>
+                    <blockquote class="pullquote">
+                        We classify sources that are climate-sensitive, underappreciated, or previously masked by
+                        fossil fuel emissions as <strong>Emerging Air Pollution</strong>.
+                    </blockquote>
+                    <p>
+                        EAP sources are not necessarily new, but they are gaining significance as the planet warms
+                        and the &lsquo;tide&rsquo; of fossil fuel burning recedes. Unfortunately, our understanding
+                        of these changes and their impacts on air quality remains limited, underscoring the
+                        importance of our research mission.
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="mark">EASE</div>
+                    <p style="margin:0;">Emerging Air pollution and Sustainable Environment — studying the changing chemistry of the troposphere.</p>
+                </div>
+                <nav class="footer__nav" aria-label="Footer">
+                    <a href="people.html">People</a>
+                    <a href="news.html">News</a>
+                    <a href="projects.html">Projects</a>
+                    <a href="publications.html">Publications</a>
+                    <a href="lab.html">Lab</a>
+                    <a href="data.html">Data</a>
+                    <a href="opportunities.html">Opportunities</a>
+                </nav>
+            </div>
+            <div class="footer__bottom">© <span id="yr"></span> EASE Research Group. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -207,4 +173,3 @@
     <script src="js/search.js"></script>
 </body>
 </html>
-

@@ -1,96 +1,114 @@
-.navbar-brand {
-  font-weight: bold;
-  color: #666;
-  margin-left: 0em !important;  /* 确保EASE的缩进 */
+/* ============================================================
+   EASE navbar — frosted paper bar, logo-colored hairline.
+   Self-contained (var fallbacks) so it works on pages that
+   don't load theme.css yet.
+   ============================================================ */
+
+.ease-nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  min-height: 56px;
+  padding: 0;
+  background: rgba(250, 247, 242, 0.82);
+  -webkit-backdrop-filter: saturate(180%) blur(14px);
+  backdrop-filter: saturate(180%) blur(14px);
+  border-bottom: 1px solid var(--line, rgba(36,31,27,.12));
+  box-shadow: 0 1px 12px rgba(36,31,27,.05);
+}
+/* logo-colored gradient hairline */
+.ease-nav::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: -1px; height: 2px;
+  background: linear-gradient(90deg,
+      var(--amber, #e0943a) 0%,
+      var(--terracotta, #c0492f) 38%,
+      var(--clay, #9a8478) 66%,
+      var(--olive, #7e8b3e) 100%);
+  opacity: .9;
 }
 
-.nav-item.dropdown .nav-link.dropdown-toggle {
-  /* 移除之前的color: #000000 设置 */
+.ease-nav .container { min-height: 56px; }
+
+/* Brand / logo */
+.ease-nav .navbar-brand { padding: 0; margin: 0; display: inline-flex; align-items: center; }
+.ease-logo {
+  height: 34px; width: auto; display: block;
+  mix-blend-mode: multiply;       /* drops the white box on the warm bar */
+  transition: transform .25s ease;
+}
+.ease-nav .navbar-brand:hover .ease-logo { transform: scale(1.03); }
+
+/* Nav links */
+.ease-nav .navbar-nav { gap: .15rem; align-items: center; }
+.ease-nav .nav-link {
+  position: relative;
+  font-family: var(--body, 'Libre Franklin', Arial, sans-serif);
+  font-size: .94rem;
+  font-weight: 500;
+  color: var(--ink-soft, #4f463f) !important;
+  padding: .5rem .85rem !important;
+  transition: color .2s ease;
+}
+.ease-nav .nav-link::after {
+  content: "";
+  position: absolute; left: .85rem; right: .85rem; bottom: .28rem;
+  height: 2px; background: var(--terracotta, #c0492f);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .25s cubic-bezier(.2,.7,.2,1);
+}
+.ease-nav .nav-link:hover { color: var(--ink, #241f1b) !important; }
+.ease-nav .nav-link:hover::after { transform: scaleX(1); }
+
+.ease-nav .nav-link.active {
+  color: var(--terracotta-deep, #97331f) !important;
+  font-weight: 700;
+}
+.ease-nav .nav-link.active::after { transform: scaleX(1); }
+
+/* Search */
+.nav-search .form-control {
+  font-family: var(--body, 'Libre Franklin', Arial, sans-serif);
+  font-size: .9rem;
+  border: 1px solid var(--line, rgba(36,31,27,.16));
+  border-radius: 999px;
+  padding: .35rem 1rem;
+  background: rgba(255,255,255,.7);
+  min-width: 180px;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.nav-search .form-control:focus {
+  border-color: var(--amber, #e0943a);
+  box-shadow: 0 0 0 3px rgba(224,148,58,.18);
+  outline: none;
+}
+#search-results .dropdown-item:hover,
+#search-results .dropdown-item.active {
+  color: var(--terracotta, #c0492f);
+  background-color: rgba(224,148,58,.10);
 }
 
-.nav-item.dropdown:hover .dropdown-menu {
-  display: block;
+/* Toggler */
+.ease-nav .navbar-toggler {
+  border: 1px solid var(--line, rgba(36,31,27,.18));
+  padding: .3rem .55rem;
 }
+.ease-nav .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(224,148,58,.2); }
 
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background-color: white;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 4px;
-  margin-top: 0;
-}
+/* Global default offset for fixed nav (index overrides to 0) */
+body { padding-top: 56px; }
 
-.dropdown-item {
-  padding: 10px 20px;
-  color: #666 !important;  /* 统一下拉菜单项的颜色 */
-  text-decoration: none;
-}
-
-.dropdown-item:hover {
-  background-color: #f0f0f0;
-}
-
-.navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000; /* Ensure the navbar is above other content */
-}
-
-body {
-    padding-top: 56px; /* Adjust this value to match the height of your navbar */
-}
-
-/* 统一导航链接颜色 */
-.nav-link,
-.nav-item.dropdown .nav-link.dropdown-toggle {
-    color: #666 !important;  /* 统一所有导航项的颜色 */
-    transition: color 0.3s ease;
-}
-
-/* 保持其他导航项的正常字重 */
-.nav-link:not(.active) {
-    font-weight: normal;
-}
-
-/* 鼠标悬停效果 */
-.nav-link:hover {
-    color: #1a237e !important;
-}
-
-/* 下拉菜单中的链接颜色 */
-.dropdown-item:hover,
-.dropdown-item.active {
-    color: #1a237e;
-    background-color: #f8f9fa;
-}
-
-/* 移除导航链接的下划线效果 */
-.nav-link:hover,
-.navbar-brand:hover,
-.dropdown-item:hover {
-    text-decoration: none !important;
-}
-
-/* 确保下拉菜单项也不显示下划线 */
-.dropdown-item {
-    text-decoration: none !important;
-}
-
-/* 调整搜索框在移动端的显示 */
-@media (max-width: 768px) {
-  .ms-3 {
-    margin: 10px 0;
-    width: 100%;
+/* Mobile */
+@media (max-width: 991px) {
+  .ease-nav .navbar-collapse {
+    background: rgba(250,247,242,.98);
+    margin-top: .5rem;
+    padding: .6rem .25rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(36,31,27,.12);
   }
-  
-  .input-group {
-    width: 100%;
-  }
-  
-  #search-results {
-    width: 100%;
-    max-width: none;
-  }
+  .ease-nav .nav-link::after { display: none; }
+  .ease-nav .nav-link { padding: .6rem .5rem !important; }
+  .nav-search { margin: .6rem .5rem 0; }
+  .nav-search .form-control { width: 100%; }
 }
