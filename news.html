@@ -5,105 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>News - EASE</title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/news.css" rel="stylesheet" />
+    <link href="css/theme.css" rel="stylesheet" />
     <link href="css/navbar.css" rel="stylesheet" />
-    <style>
-      /* 新增导航栏固定样式 */
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        z-index: 1000;
-      }
-      body {
-        padding-top: 12px;
-        margin-top: 0 !important;  /* 覆盖原有内联样式 */
-        font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, sans-serif;
-        line-height: 1.6;
-        min-height: 100vh;  /* 确保body至少有一个视口高度 */
-      }
-
-      /* 主标题样式 */
-      h1 {
-        font-family: Arial, serif;
-        font-size: 2.2em;
-        font-weight: 600;
-        color: #2c3e50;
-        margin-bottom: 0.3em;
-        text-align: left;
-        margin-left: 15px;
-        margin-top: 0;
-      }
-
-      /* 正文段落样式 */
-      p {
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        font-size: 1.1em;
-        line-height: 1.8;
-        color: #3c4858;
-      }
-
-      /* 内容区域样式 */
-      .news2-content {
-        margin-top: 24px;  /* 40px 的 60% = 24px */
-        padding-top: 0;
-        min-height: calc(100vh - 100px);  /* 确保内容区域有足够的高度支持滚动 */
-      }
-
-      /* 新闻项目样式 */
-      .news-item {
-        margin: 0.5em 0;
-        display: flex;
-        align-items: baseline;
-        justify-content: space-between;
-        padding-right: 15px;  /* 给最右侧加一点内边距 */
-      }
-
-      /* 日期样式 */
-      .date {
-        font-family: 'Georgia', 'Times New Roman', serif;
-        color: #666;
-        font-size: 1em;
-        margin-left: 20px;  /* 给日期左边加点间距 */
-        min-width: 100px;   /* 给日期一个固定的最小宽度 */
-        text-align: right;  /* 日期右对齐 */
-      }
-
-      /* 新闻文本样式 */
-      .news-text {
-        font-family: 'Source Sans Pro', Arial, sans-serif;
-        color: #2c3e50;
-        position: relative;
-        padding-left: 15px;  /* 为点留出空间 15px 1em*/
-      }
-
-      .news-text::before {
-        content: "•";  /* 添加点 */
-        position: absolute;
-        left: 0;
-        color: #2c3e50;  /* 点的颜色与文字一致 */
-      }
-
-      /* 链接样式 */
-      .news-item a {
-        color: #2c3e50;
-        text-decoration: none;
-        flex-grow: 1;  /* 让链接占据剩余空间 */
-      }
-
-      .news-item a:hover .news-text {
-        color: #1a237e;
-      }
-
-      hr {
-        margin: 0.5em 0;
-        border-color: #eee;
-      }
-    </style>
   </head>
-  <body style="margin-top: 20px;">
+  <body>
     <!-- Include the navigation bar -->
     <div id="navbar-placeholder"></div>
     <script>
@@ -133,128 +38,59 @@
         .catch(error => console.error('Error loading navbar:', error));
     </script>
 
-    <!-- News Content -->
-    <main class="container news2-content">
-      <div class="news2-section">
+    <header class="page-head">
+      <div class="wrap">
+        <p class="eyebrow">Group updates</p>
         <h1>News</h1>
-        <div class="news-item">
-          <a href='../news/news16.html'>
-            <span class="news-text">EASE Group Members Presented at the AGU Meeting</span>
-          </a>
-          <span class="date">28/12/2025</span>
-        </div>
-        <hr> 
-        <div class="news-item">
-          <a href='../news/news15.html'>
-            <span class="news-text">YAO Lin Received Best Poster Award at 2025 Joint VOCs Conference</span>
-          </a>
-          <span class="date">10/11/2025</span>
-        </div>
-        <hr>       
-        <div class="news-item">
-          <a href='../news/news14.html'>
-            <span class="news-text">Prof. Lyu Awarded NSFC General Program Grant</span>
-          </a>
-          <span class="date">27/08/2025</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news13.html'>
-            <span class="news-text">Dr. Li Hongyong joins Aerospace Information Technology University</span>
-          </a>
-          <span class="date">27/08/2025</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news12.html'>
-            <span class="news-text">Prof. Lyu receives Rising Star Research Grant 2024/25</span>
-          </a>
-          <span class="date">24/06/2025</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news11.html'>
-            <span class="news-text">Prof. Lyu named as a 2024 Top Scholar by ScholarGPS</span>
-          </a>
-          <span class="date">24/06/2025</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news10.html'>
-            <span class="news-text">Prof. Lyu Appointed as Standing Committee Member of the Ozone Pollution Control Professional <br><span style="display: inline-block; margin-left: 15px;"></span>Committee of the Chinese Society for Environmental Sciences</span>
-          </a>
-          <span class="date">07/05/2025</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news9.html'>
-            <span class="news-text">Hongyong Li Published a Research Article in ACS Environmental Au</span>
-          </a>
-          <span class="date">15/03/2025</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news8.html'>
-            <span class="news-text">Harbin Engineering University Welcomes Dr. Qin Chao as New Associate Professor</span>
-          </a>
-          <span class="date">28/08/2024</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news7.html'>
-            <span class="news-text">Dr. Lyu awarded Faculty Performance Award</span>
-          </a>
-          <span class="date">28/08/2024</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news6.html'>
-            <span class="news-text">Dr. Lyu receives PPR fund</span>
-          </a>
-          <span class="date">01/06/2024</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news5.html'>
-            <span class="news-text">LOPAP training held at HKBU</span>
-          </a>
-          <span class="date">22/12/2023</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news4.html'>
-            <span class="news-text">A perspective article published in One Earth</span>
-          </a>
-          <span class="date">29/08/2023</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news3.html'>
-            <span class="news-text">Kick-off meeting of EPD-funded project at HKBU</span>
-          </a>
-          <span class="date">18/08/2023</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news2.html'>
-            <span class="news-text">A consultancy project funded by EPD</span>
-          </a>
-          <span class="date">11/07/2023</span>
-        </div>
-        <hr>
-        <div class="news-item">
-          <a href='../news/news1_v.html'>
-            <span class="news-text">Dr. Lyu receives RGC funding</span>
-          </a>
-          <span class="date">30/06/2023</span>
-        </div>
-        <hr>
+      </div>
+    </header>
+
+    <main class="page-section">
+      <div class="wrap">
+        <ul class="news-list">
+          <li class="news-row"><a href="news/news16.html">EASE Group Members Presented at the AGU Meeting</a><span class="date">28 Dec 2025</span></li>
+          <li class="news-row"><a href="news/news15.html">YAO Lin Received Best Poster Award at 2025 Joint VOCs Conference</a><span class="date">10 Nov 2025</span></li>
+          <li class="news-row"><a href="news/news14.html">Prof. Lyu Awarded NSFC General Program Grant</a><span class="date">27 Aug 2025</span></li>
+          <li class="news-row"><a href="news/news13.html">Dr. Li Hongyong joins Aerospace Information Technology University</a><span class="date">27 Aug 2025</span></li>
+          <li class="news-row"><a href="news/news12.html">Prof. Lyu receives Rising Star Research Grant 2024/25</a><span class="date">24 Jun 2025</span></li>
+          <li class="news-row"><a href="news/news11.html">Prof. Lyu named as a 2024 Top Scholar by ScholarGPS</a><span class="date">24 Jun 2025</span></li>
+          <li class="news-row"><a href="news/news10.html">Prof. Lyu Appointed as Standing Committee Member of the Ozone Pollution Control Professional Committee of the Chinese Society for Environmental Sciences</a><span class="date">07 May 2025</span></li>
+          <li class="news-row"><a href="news/news9.html">Hongyong Li Published a Research Article in ACS Environmental Au</a><span class="date">15 Mar 2025</span></li>
+          <li class="news-row"><a href="news/news8.html">Harbin Engineering University Welcomes Dr. Qin Chao as New Associate Professor</a><span class="date">28 Aug 2024</span></li>
+          <li class="news-row"><a href="news/news7.html">Dr. Lyu awarded Faculty Performance Award</a><span class="date">28 Aug 2024</span></li>
+          <li class="news-row"><a href="news/news6.html">Dr. Lyu receives PPR fund</a><span class="date">01 Jun 2024</span></li>
+          <li class="news-row"><a href="news/news5.html">LOPAP training held at HKBU</a><span class="date">22 Dec 2023</span></li>
+          <li class="news-row"><a href="news/news4.html">A perspective article published in One Earth</a><span class="date">29 Aug 2023</span></li>
+          <li class="news-row"><a href="news/news3.html">Kick-off meeting of EPD-funded project at HKBU</a><span class="date">18 Aug 2023</span></li>
+          <li class="news-row"><a href="news/news2.html">A consultancy project funded by EPD</a><span class="date">11 Jul 2023</span></li>
+          <li class="news-row"><a href="news/news1_v.html">Dr. Lyu receives RGC funding</a><span class="date">30 Jun 2023</span></li>
+        </ul>
       </div>
     </main>
-    
 
+    <footer class="site-footer">
+      <div class="wrap">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <div class="mark">EASE</div>
+            <p style="margin:0;">Emerging Air pollution and Sustainable Environment — studying the changing chemistry of the troposphere.</p>
+          </div>
+          <nav class="footer__nav" aria-label="Footer">
+            <a href="index.html">Home</a>
+            <a href="people.html">People</a>
+            <a href="projects.html">Projects</a>
+            <a href="publications.html">Publications</a>
+            <a href="lab.html">Lab</a>
+            <a href="data.html">Data</a>
+            <a href="opportunities.html">Opportunities</a>
+          </nav>
+        </div>
+        <div class="footer__bottom">© <span id="yr"></span> EASE Research Group. All rights reserved.</div>
+      </div>
+    </footer>
+
+    <script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script type="module" src="/main.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
