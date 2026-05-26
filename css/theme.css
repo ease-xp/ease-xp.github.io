@@ -67,11 +67,41 @@ body {
      on short pages instead of leaving the body background showing */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh;   /* fallback for old browsers */
+  min-height: 100dvh;  /* dynamic vh: no jump under mobile URL bars */
 }
 /* the main content region absorbs the slack and pushes the footer down */
 main { flex: 1 0 auto; }
 .site-footer { flex-shrink: 0; }
+
+p { text-wrap: pretty; }      /* fewer ragged orphans in body copy */
+
+/* line figures up in dates, coordinates and other data */
+.when, .news-row .date, .meta-list dd, .rcard__num, .footer__bottom {
+  font-variant-numeric: tabular-nums;
+}
+
+/* keyboard focus — visible since we removed link underlines */
+a:focus-visible,
+.btn-ease:focus-visible,
+.nav-link:focus-visible,
+.person:focus-visible,
+.proj-card a:focus-visible,
+.form-control:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* honour reduced-motion globally */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 
 img { max-width: 100%; display: block; }
 
@@ -87,9 +117,9 @@ h1, h2, h3, h4 {
   font-family: var(--display);
   font-weight: 600;
   color: var(--ink);
-  line-height: 1.08;
-  letter-spacing: -0.015em;
+  line-height: 1.12;
   margin: 0 0 .5em;
+  text-wrap: balance;   /* avoid lonely last words in headings */
 }
 
 .eyebrow {
@@ -195,16 +225,8 @@ h1, h2, h3, h4 {
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 1rem; }
 
-/* staggered load-in */
-.hero .reveal { opacity: 0; transform: translateY(18px); animation: rise .9s cubic-bezier(.2,.7,.2,1) forwards; }
-.hero .eyebrow { animation-delay: .05s; }
-.hero h1        { animation-delay: .15s; }
-.hero__lead     { animation-delay: .30s; }
-.hero__actions  { animation-delay: .45s; }
-@keyframes rise { to { opacity: 1; transform: none; } }
-@media (prefers-reduced-motion: reduce) {
-  .hero .reveal { animation: none; opacity: 1; transform: none; }
-}
+/* hero content is static — no entrance animation (avoid the generic
+   staggered fade-up). .reveal is left as a harmless no-op hook. */
 
 /* ============================================================
    RESEARCH TRIPTYCH
@@ -226,10 +248,7 @@ h1, h2, h3, h4 {
 }
 .rcard img {
   width: 100%; height: 100%; object-fit: cover;
-  transition: transform .7s cubic-bezier(.2,.7,.2,1), filter .5s ease;
-  filter: saturate(.96);
 }
-.rcard:hover img { transform: scale(1.06); filter: saturate(1.08); }
 .rcard::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(to top, rgba(27,21,18,.88) 0%, rgba(27,21,18,.25) 45%, rgba(27,21,18,0) 75%);
@@ -241,13 +260,14 @@ h1, h2, h3, h4 {
 }
 .rcard h3 {
   color: #fdfaf4; font-size: 1.5rem; margin: 0;
-  font-weight: 600; letter-spacing: -.01em;
+  font-weight: 600;
 }
 .rcard__rule {
-  width: 0; height: 3px; background: var(--amber);
-  margin-top: .9rem; transition: width .5s cubic-bezier(.2,.7,.2,1);
+  width: 56px; height: 3px; background: var(--amber);
+  margin-top: .9rem; transform: scaleX(0); transform-origin: left;
+  transition: transform .18s ease-out;
 }
-.rcard:hover .rcard__rule { width: 56px; }
+.rcard:hover .rcard__rule { transform: scaleX(1); }
 
 /* ============================================================
    ABOUT
