@@ -209,9 +209,9 @@ h1, h2, h3, h4 {
 
 .hero h1 {
   color: #fdfaf4;
-  font-size: clamp(2.45rem, 5.4vw, 4.35rem);
+  font-size: clamp(2.1rem, 3.6vw, 3.2rem);
   font-weight: 600;
-  max-width: 15ch;
+  max-width: 37ch;
   margin-bottom: .55em;
 }
 .hero h1 .accent { color: var(--amber-soft); font-style: italic; font-weight: 400; }
