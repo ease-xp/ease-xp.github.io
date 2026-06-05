@@ -189,7 +189,7 @@ h1, h2, h3, h4 {
     url("../images/hero-observatory.webp") center right / cover no-repeat,
     linear-gradient(158deg, var(--dusk-1) 0%, var(--dusk-2) 52%, var(--dusk-3) 100%);
   color: #f6ede2;
-  padding: calc(var(--nav-h) + clamp(3.5rem, 9vw, 7rem)) 0 clamp(4rem, 9vw, 7rem);
+  padding: calc(var(--nav-h) + clamp(2rem, 5vw, 4rem)) 0 clamp(4rem, 9vw, 7rem);
 }
 /* grain / haze */
 .hero::before {
