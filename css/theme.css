@@ -6,7 +6,7 @@
    sources), clay (haze). Teal is the cool data counterpoint.
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Libre+Franklin:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
 
 :root {
   /* Ink & paper — warm, never pure black/white */
@@ -35,7 +35,7 @@
   --dusk-3: #6e3320;
 
   /* Type */
-  --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+  --display: 'Source Serif 4', Georgia, 'Times New Roman', serif;
   --body:    'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
   --mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
 
@@ -183,8 +183,10 @@ h1, h2, h3, h4 {
   isolation: isolate;
   overflow: hidden;
   background:
-    radial-gradient(120% 90% at 78% 118%, rgba(224,148,58,.55), rgba(224,148,58,0) 55%),
-    radial-gradient(90% 70% at 12% -10%, rgba(126,139,62,.18), rgba(126,139,62,0) 60%),
+    linear-gradient(90deg, rgba(27,21,18,.94) 0%, rgba(43,24,19,.88) 34%, rgba(62,31,22,.56) 62%, rgba(62,31,22,.34) 100%),
+    linear-gradient(180deg, rgba(27,21,18,.18) 0%, rgba(27,21,18,.08) 46%, rgba(27,21,18,.72) 100%),
+    radial-gradient(120% 90% at 78% 118%, rgba(224,148,58,.42), rgba(224,148,58,0) 55%),
+    url("../images/hero-observatory.webp") center right / cover no-repeat,
     linear-gradient(158deg, var(--dusk-1) 0%, var(--dusk-2) 52%, var(--dusk-3) 100%);
   color: #f6ede2;
   padding: calc(var(--nav-h) + clamp(3.5rem, 9vw, 7rem)) 0 clamp(4rem, 9vw, 7rem);
@@ -199,7 +201,7 @@ h1, h2, h3, h4 {
 /* smoke-curve motif echoing the logo */
 .hero__waves {
   position: absolute; right: -4%; bottom: -2%; width: min(620px, 60%);
-  z-index: -1; opacity: .5; pointer-events: none;
+  z-index: -1; opacity: .32; pointer-events: none;
 }
 .hero__waves path { fill: none; stroke-width: 2; }
 
@@ -411,6 +413,16 @@ h1, h2, h3, h4 {
 .person__body { padding: .9rem 1rem 1.1rem; }
 .person__name { font-family: var(--display); font-weight: 600; font-size: 1.12rem; color: var(--ink); }
 .person__role { font-size: .85rem; color: var(--ink-faint); margin-top: .2rem; }
+.join-group {
+  margin-top: 2.2rem;
+  display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+  padding: 1.4rem 1.6rem;
+  background: var(--paper-warm); border: 1px solid var(--line); border-left: 3px solid var(--terracotta);
+  border-radius: 6px;
+}
+.join-group .eyebrow { margin-bottom: .65rem; }
+.join-group h3 { font-size: clamp(1.25rem, 2vw, 1.55rem); margin: 0 0 .35rem; }
+.join-group p:not(.eyebrow) { margin: 0; color: var(--ink-soft); max-width: 62ch; }
 
 /* ---- Alumni ---- */
 .alumni { list-style: none; padding: 0; margin: 0; }
@@ -430,32 +442,23 @@ h1, h2, h3, h4 {
 }
 
 /* ---- Publications ---- */
-.pub-wrap { max-width: 1220px; }
 .pub-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.6rem; }
 .pub-item {
-  display: grid; grid-template-columns: minmax(0,1fr); gap: 1.1rem;
+  display: grid; grid-template-columns: minmax(300px, 38%) minmax(0,1fr); gap: 1.6rem;
   align-items: start;
   background: var(--paper); border: 1px solid var(--line); border-radius: 6px;
-  padding: clamp(.9rem, 2vw, 1.4rem); transition: box-shadow .22s ease, border-color .22s ease;
+  padding: 1.2rem 1.4rem; transition: box-shadow .22s ease, border-color .22s ease;
 }
 .pub-item:hover { box-shadow: var(--shadow-md); border-color: transparent; }
 .pub-item > img {
-  width: min(100%, 744px); height: auto; object-fit: contain; border-radius: 4px;
-  justify-self: center;
+  width: 100%; height: auto; object-fit: contain; justify-self: center; border-radius: 4px;
   background: #fff;
 }
-.pub-item > div { width: 100%; max-width: none; }
-.pub-item h3 {
-  max-width: none;
-  font-size: clamp(1.792rem, 2.4vw, 2.16rem);
-  line-height: 1.3;
-  margin: 0 0 .5rem;
-  text-wrap: wrap;
-}
-.pub-journal { width: 100%; font-family: var(--display); font-style: italic; color: var(--teal-deep); margin: 0 0 .35rem; font-size: 1.6rem; }
-.pub-authors { width: 100%; font-size: 1.472rem; color: var(--ink-faint); margin: 0 0 .9rem; line-height: 1.55; }
+.pub-item h3 { font-size: 1.2rem; line-height: 1.3; margin: 0 0 .5rem; }
+.pub-journal { font-family: var(--display); font-style: italic; color: var(--teal-deep); margin: 0 0 .35rem; font-size: 1rem; }
+.pub-authors { font-size: .92rem; color: var(--ink-faint); margin: 0 0 .9rem; line-height: 1.55; }
 .pub-authors strong { color: var(--terracotta-deep); }
-.pub-more { display: inline-flex; align-items: center; gap: .4em; font-family: var(--mono); font-size: 1.216rem; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta); }
+.pub-more { display: inline-flex; align-items: center; gap: .4em; font-family: var(--mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta); }
 .pub-more:hover { color: var(--terracotta-deep); }
 .pub-fulllist { text-align: center; padding: 1rem 0 0; }
 
@@ -568,10 +571,26 @@ h1, h2, h3, h4 {
   .proj-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 560px) {
-  .pub-wrap { padding: 0; }
-  .pub-list { gap: 1.1rem; }
-  .pub-item { padding: 0; gap: 0; border-left: 0; border-right: 0; border-radius: 0; }
-  .pub-item > img { width: 100%; height: auto; border-radius: 0; }
-  .pub-item > div { padding: .8rem 1rem 1rem; }
+  .hero {
+    background:
+      linear-gradient(90deg, rgba(27,21,18,.94) 0%, rgba(43,24,19,.88) 58%, rgba(62,31,22,.62) 100%),
+      linear-gradient(180deg, rgba(27,21,18,.15) 0%, rgba(27,21,18,.08) 44%, rgba(27,21,18,.82) 100%),
+      radial-gradient(120% 90% at 78% 118%, rgba(224,148,58,.34), rgba(224,148,58,0) 55%),
+      url("../images/hero-observatory.webp") 58% center / cover no-repeat,
+      linear-gradient(158deg, var(--dusk-1) 0%, var(--dusk-2) 52%, var(--dusk-3) 100%);
+    padding-bottom: 3.2rem;
+  }
+  .hero h1 {
+    max-width: min(100%, 8.8ch);
+    font-size: clamp(2rem, 10vw, 2.45rem);
+    overflow-wrap: anywhere;
+  }
+  .hero__lead { max-width: 100%; }
+  .hero__actions { flex-direction: column; align-items: stretch; }
+  .hero__actions .btn-ease { justify-content: center; width: 100%; }
+  .join-group { flex-direction: column; align-items: stretch; }
+  .join-group .btn-ease { justify-content: center; }
+  .pub-item { grid-template-columns: 1fr; }
+  .pub-item > img { width: 100%; height: auto; }
   .news-row { flex-direction: column; gap: .2rem; }
 }
