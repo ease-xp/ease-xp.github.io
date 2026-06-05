@@ -445,21 +445,28 @@ h1, h2, h3, h4 {
 .pub-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.6rem; }
 .pub-item {
   display: grid; grid-template-columns: minmax(300px, 38%) minmax(0,1fr); gap: 1.6rem;
-  align-items: start;
+  align-items: center;
   background: var(--paper); border: 1px solid var(--line); border-radius: 6px;
   padding: 1.2rem 1.4rem; transition: box-shadow .22s ease, border-color .22s ease;
 }
 .pub-item:hover { box-shadow: var(--shadow-md); border-color: transparent; }
+.pub-item > div { align-self: center; }
 .pub-item > img {
   width: 100%; height: auto; object-fit: contain; justify-self: center; border-radius: 4px;
   background: #fff;
 }
+.pub-item > img.pub-figure--compact { width: min(100%, 340px); }
 .pub-item h3 { font-size: 1.2rem; line-height: 1.3; margin: 0 0 .5rem; }
 .pub-journal { font-family: var(--display); font-style: italic; color: var(--teal-deep); margin: 0 0 .35rem; font-size: 1rem; }
 .pub-authors { font-size: .92rem; color: var(--ink-faint); margin: 0 0 .9rem; line-height: 1.55; }
 .pub-authors strong { color: var(--terracotta-deep); }
-.pub-more { display: inline-flex; align-items: center; gap: .4em; font-family: var(--mono); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; color: var(--terracotta); }
-.pub-more:hover { color: var(--terracotta-deep); }
+.pub-more {
+  display: inline-flex; align-items: center; gap: .35em;
+  font-family: var(--body); font-size: .9rem; font-weight: 600;
+  color: var(--teal-deep); border-bottom: 1px solid rgba(47,107,107,.32);
+}
+.pub-more::after { content: "↗"; font-size: .82em; line-height: 1; }
+.pub-more:hover { color: var(--terracotta-deep); border-bottom-color: rgba(151,51,31,.45); }
 .pub-fulllist { text-align: center; padding: 1rem 0 0; }
 
 /* ---- News ---- */
@@ -590,7 +597,8 @@ h1, h2, h3, h4 {
   .hero__actions .btn-ease { justify-content: center; width: 100%; }
   .join-group { flex-direction: column; align-items: stretch; }
   .join-group .btn-ease { justify-content: center; }
-  .pub-item { grid-template-columns: 1fr; }
+  .pub-item { grid-template-columns: 1fr; align-items: start; }
+  .pub-item > div { align-self: start; }
   .pub-item > img { width: 100%; height: auto; }
   .news-row { flex-direction: column; gap: .2rem; }
 }
