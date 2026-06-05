@@ -596,8 +596,8 @@ h1, h2, h3, h4 {
     padding: calc(var(--nav-h) + 1.35rem) 0 2.75rem;
   }
   .hero h1 {
-    max-width: 16ch;
-    font-size: clamp(1.8rem, 7.6vw, 2.12rem);
+    max-width: 100%;
+    font-size: clamp(1.7rem, 7vw, 1.98rem);
     line-height: 1.08;
     overflow-wrap: normal;
     word-break: normal;
@@ -606,10 +606,10 @@ h1, h2, h3, h4 {
     font-size: .68rem;
     line-height: 1.7;
     letter-spacing: .18em;
-    max-width: 28ch;
+    max-width: 100%;
   }
   .hero__lead {
-    max-width: 26ch;
+    max-width: 100%;
     font-size: .96rem;
     line-height: 1.62;
     margin-bottom: 1.55rem;
