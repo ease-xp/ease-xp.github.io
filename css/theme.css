@@ -365,6 +365,12 @@ h1, h2, h3, h4 {
 .page-head .eyebrow { margin-bottom: .8rem; }
 .page-head .lead { color: var(--ink-soft); max-width: 100%; margin: .9rem 0 0; }
 
+@media (min-width: 1200px) {
+  body:has(.back-link[href="../news.html"]) .page-head .wrap > * {
+    transform: translateX(clamp(4rem, 7vw, 8rem));
+  }
+}
+
 /* Generic interior section + heading */
 .page-section { padding: clamp(2.6rem, 5vw, 4rem) 0; }
 .section-head {
