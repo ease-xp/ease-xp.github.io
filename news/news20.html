@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prof. Lyu Appointed as an Expert of an Innovation Base - EASE</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../css/theme.css" rel="stylesheet" />
+  <link href="../css/navbar.css" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('../navbar.html')
+    .then(r => r.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+      document.querySelectorAll('.navbar-nav a').forEach(link => {
+        link.setAttribute('href', '../' + link.getAttribute('href'));
+      });
+      const brand = document.querySelector('.navbar-brand');
+      if (brand) brand.setAttribute('href', '../index.html');
+      const active = document.querySelector('.nav-link[href$="news.html"]');
+      if (active) active.classList.add('active');
+    })
+    .catch(e => console.error('Error loading navbar:', e));
+</script>
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">News</p>
+    <h1>Prof. Lyu Appointed as an Expert of an Innovation Base</h1>
+    <p class="meta"><span class="when">04 Jun 2026</span></p>
+  </div>
+</header>
+
+<main class="page-section">
+  <div class="wrap read article">
+    <a class="back-link" href="../news.html">← All news</a>
+
+    <p>Prof. Lyu was invited by the College of Environment and Climate at Jinan University to give a talk on ozone pollution in the Guangdong – Hong Kong – Macau Greater Bay Area under extreme weathers.</p>
+    <p>At the meeting, he was appointed as an expert of “The Innovation Base for Air Quality Science and Management for Guangdong, Hong Kong, Macau Greater Bay Area”. The appointment period is from January 2026 to December 2027. </p>
+
+    <figure class="article-figure">
+      <img src="../images/News201.png" alt="Air Quality" />
+    </figure>
+    <figure class="article-figure">
+      <img src="../images/News202.png" alt="Air Quality" />
+    </figure>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="mark">EASE</div>
+        <p style="margin:0;">Emerging Air pollution and Sustainable Environment — studying the changing chemistry of the troposphere.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="../index.html">Home</a>
+        <a href="../people.html">People</a>
+        <a href="../news.html">News</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../data.html">Data</a>
+        <a href="../opportunities.html">Opportunities</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">© <span id="yr"></span> EASE Research Group. All rights reserved.</div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../js/search.js"></script>
+</body>
+</html>

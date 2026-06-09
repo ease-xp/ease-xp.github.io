@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhD Students ZHANG Fengyang and SUN Maiqi Receive Outstanding PICO Award at National Ozone Symposium - EASE</title>
+  <link href="../css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../css/theme.css" rel="stylesheet" />
+  <link href="../css/navbar.css" rel="stylesheet" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+</head>
+<body>
+<div id="navbar-placeholder"></div>
+<script>
+  fetch('../navbar.html')
+    .then(r => r.text())
+    .then(data => {
+      document.getElementById('navbar-placeholder').innerHTML = data;
+      document.querySelectorAll('.navbar-nav a').forEach(link => {
+        link.setAttribute('href', '../' + link.getAttribute('href'));
+      });
+      const brand = document.querySelector('.navbar-brand');
+      if (brand) brand.setAttribute('href', '../index.html');
+      const active = document.querySelector('.nav-link[href$="news.html"]');
+      if (active) active.classList.add('active');
+    })
+    .catch(e => console.error('Error loading navbar:', e));
+</script>
+
+<header class="page-head">
+  <div class="wrap">
+    <p class="eyebrow">News</p>
+    <h1>PhD Students ZHANG Fengyang and SUN Maiqi Receive Outstanding PICO Award at National Ozone Symposium</h1>
+    <p class="meta"><span class="when">24 Apr 2026</span></p>
+  </div>
+</header>
+
+<main class="page-section">
+  <div class="wrap read article">
+    <a class="back-link" href="../news.html">← All news</a>
+
+    <p>In April 2026, ZHANG Fengyang and SUN Maiqi, PhD students of EASE team, received the Outstanding PICO Award at the 8th Symposium on Atmospheric Ozone Pollution Prevention and Control held in Lanzhou, Gansu.</p>
+    <p>ZHANG Fengyang’s presentation, titled “Slowing Growth of Transboundary Ozone Export from the Chinese Mainland,” examined the temporal evolution and influencing factors of ozone export from the Chinese Mainland, demonstrating the effectiveness of China’s air pollution control. </p>
+    <p>SUN Maiqi’s presentation, titled “Temperature Effects on Ozone Pollution in Hong Kong", focused on how elevated temperatures influence ozone formation, emphasizing the increasing challenges of ozone pollution control under a warming climate.</p>
+    <p>This recognition awarded to ZHANG Fengyang and SUN Maiqi highlights the strong research capabilities and continued commitment of the EASE team in the field of atmospheric chemistry.</p>
+    </p>
+    <figure class="article-figure">
+      <img src="../images/News181.png" alt="Air Quality" />
+    </figure>
+    <figure class="article-figure">
+      <img src="../images/News182.png" alt="Air Quality" />
+    </figure>
+  </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__top">
+      <div class="footer__brand">
+        <div class="mark">EASE</div>
+        <p style="margin:0;">Emerging Air pollution and Sustainable Environment — studying the changing chemistry of the troposphere.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="../index.html">Home</a>
+        <a href="../people.html">People</a>
+        <a href="../news.html">News</a>
+        <a href="../projects.html">Projects</a>
+        <a href="../publications.html">Publications</a>
+        <a href="../lab.html">Lab</a>
+        <a href="../data.html">Data</a>
+        <a href="../opportunities.html">Opportunities</a>
+      </nav>
+    </div>
+    <div class="footer__bottom">© <span id="yr"></span> EASE Research Group. All rights reserved.</div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type="module" src="/main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js"></script>
+<script src="../js/search.js"></script>
+</body>
+</html>
