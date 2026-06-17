@@ -220,15 +220,7 @@
 
     ctx.fillStyle = '#4f463f';
     ctx.font = '400 34px Arial, sans-serif';
-    wrapText(ctx, data.text, 86, y, 1028, 52, 7);
-
-    ctx.fillStyle = '#2f6b6b';
-    ctx.font = '600 34px Arial, sans-serif';
-    ctx.fillText('ease-xp.github.io', 86, 1494);
-
-    ctx.fillStyle = '#8c8178';
-    ctx.font = '400 24px monospace';
-    wrapText(ctx, data.url, 86, 1532, 1028, 34, 2);
+    wrapText(ctx, data.text, 86, y, 1028, 52, 6);
 
     return canvas.toDataURL('image/png');
   }
