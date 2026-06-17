@@ -110,8 +110,9 @@
 }
 
 .share-poster__preview img {
-  width: min(100%, 620px);
-  height: auto;
+  width: auto;
+  max-width: min(100%, 620px);
+  max-height: calc(92vh - 2rem);
   border-radius: 4px;
   box-shadow: var(--shadow-md);
   background: #fff;

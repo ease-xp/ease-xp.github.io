@@ -154,13 +154,19 @@
     ctx.closePath();
   }
 
-  function drawCoverImage(ctx, image, x, y, width, height) {
+  function drawFullImage(ctx, image, x, y, width, height) {
     if (!image) return;
-    const ratio = Math.max(width / image.naturalWidth, height / image.naturalHeight);
+    const ratio = Math.min(width / image.naturalWidth, height / image.naturalHeight);
     const drawWidth = image.naturalWidth * ratio;
     const drawHeight = image.naturalHeight * ratio;
     const dx = x + (width - drawWidth) / 2;
     const dy = y + (height - drawHeight) / 2;
+
+    ctx.save();
+    ctx.fillStyle = '#fff';
+    roundedRect(ctx, x, y, width, height, 18);
+    ctx.fill();
+    ctx.restore();
 
     ctx.save();
     roundedRect(ctx, x, y, width, height, 18);
@@ -200,7 +206,7 @@
 
     let y = titleBottom + 90;
     if (image) {
-      drawCoverImage(ctx, image, 86, y, 1028, 520);
+      drawFullImage(ctx, image, 86, y, 1028, 520);
       y += 590;
     } else {
       ctx.fillStyle = '#efe7db';
