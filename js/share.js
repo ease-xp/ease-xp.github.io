@@ -100,7 +100,7 @@
     };
   }
 
-  function wrapText(ctx, text, x, y, maxWidth, lineHeight, maxLines) {
+  function textLines(ctx, text, maxWidth) {
     const words = text.split(/\s+/).filter(Boolean);
     const lines = [];
     let line = '';
@@ -116,8 +116,14 @@
     });
 
     if (line) lines.push(line);
-    const output = lines.slice(0, maxLines);
-    if (lines.length > maxLines) {
+    return lines;
+  }
+
+  function wrapText(ctx, text, x, y, maxWidth, lineHeight, maxLines) {
+    const lines = textLines(ctx, text, maxWidth);
+    const output = Number.isFinite(maxLines) ? lines.slice(0, maxLines) : lines;
+
+    if (Number.isFinite(maxLines) && lines.length > maxLines) {
       output[maxLines - 1] = output[maxLines - 1].replace(/[,.!?;:]*$/, '') + '...';
     }
 
@@ -177,12 +183,22 @@
 
   async function makePoster(data) {
     const width = 1200;
-    const height = 1600;
     const canvas = document.createElement('canvas');
     canvas.width = width;
-    canvas.height = height;
     const ctx = canvas.getContext('2d');
     const image = await loadImage(data.image);
+
+    ctx.font = '600 72px Georgia, serif';
+    const titleLines = textLines(ctx, data.title, 1028).slice(0, 6);
+    ctx.font = '400 34px Arial, sans-serif';
+    const bodyLines = textLines(ctx, data.text, 1028);
+    const titleBottom = 290 + titleLines.length * 86;
+    const imageBlockHeight = image ? 590 : 370;
+    const bodyStart = titleBottom + 90 + imageBlockHeight;
+    const bottomPadding = 86;
+    const height = Math.max(1200, bodyStart + bodyLines.length * 52 + bottomPadding);
+
+    canvas.height = height;
 
     ctx.fillStyle = '#faf7f2';
     ctx.fillRect(0, 0, width, height);
@@ -197,7 +213,9 @@
 
     ctx.fillStyle = '#241f1b';
     ctx.font = '600 72px Georgia, serif';
-    const titleBottom = wrapText(ctx, data.title, 86, 290, 1028, 86, 6);
+    titleLines.forEach((line, index) => {
+      ctx.fillText(line, 86, 290 + index * 86);
+    });
 
     ctx.fillStyle = '#8c8178';
     ctx.font = '400 32px monospace';
@@ -220,7 +238,7 @@
 
     ctx.fillStyle = '#4f463f';
     ctx.font = '400 34px Arial, sans-serif';
-    wrapText(ctx, data.text, 86, y, 1028, 52, 6);
+    wrapText(ctx, data.text, 86, y, 1028, 52);
 
     return canvas.toDataURL('image/png');
   }
