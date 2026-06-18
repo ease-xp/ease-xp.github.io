@@ -18,6 +18,33 @@
   gap: .42rem;
 }
 
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  min-height: 2.2rem;
+  padding: .52rem .78rem;
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  background: rgba(255, 255, 255, .28);
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: .72rem;
+  line-height: 1;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color .18s ease, color .18s ease, background .18s ease, transform .18s ease;
+}
+
+.share-button:hover {
+  border-color: var(--terracotta);
+  background: rgba(192, 73, 47, .08);
+  color: var(--terracotta-deep);
+  transform: translateY(-1px);
+}
+
 .share-icon {
   display: inline-flex;
   align-items: center;
@@ -39,6 +66,7 @@
   transform: translateY(-1px);
 }
 
+.share-button:focus-visible,
 .share-icon:focus-visible,
 .share-poster__close:focus-visible,
 .share-poster__action:focus-visible {
@@ -46,6 +74,7 @@
   outline-offset: 2px;
 }
 
+.share-button svg,
 .share-icon svg {
   width: 1.06rem;
   height: 1.06rem;

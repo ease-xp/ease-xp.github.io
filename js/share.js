@@ -7,6 +7,8 @@
     qq: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5c-2.58 0-4.67 2.36-4.67 5.27 0 1.05.16 2.01.43 2.85-.98.66-1.61 1.68-1.61 2.83 0 .68.23 1.32.62 1.85-.5.54-.86 1.27-.86 2.03 0 1.18.86 1.86 2.16 1.86.62 0 1.32-.16 2.02-.47.57.43 1.21.68 1.91.68s1.34-.25 1.91-.68c.7.31 1.4.47 2.02.47 1.3 0 2.16-.68 2.16-1.86 0-.76-.36-1.49-.86-2.03.39-.53.62-1.17.62-1.85 0-1.15-.63-2.17-1.61-2.83.27-.84.43-1.8.43-2.85C16.67 4.86 14.58 2.5 12 2.5Zm-1.72 6.2c-.42 0-.76-.45-.76-1s.34-1 .76-1 .76.45.76 1-.34 1-.76 1Zm3.44 0c-.42 0-.76-.45-.76-1s.34-1 .76-1 .76.45.76 1-.34 1-.76 1Zm-1.72 2.15c.84 0 1.66.22 2.35.61-.54.55-1.37.9-2.35.9s-1.81-.35-2.35-.9c.69-.39 1.51-.61 2.35-.61Z" fill="currentColor"/></svg>'
   };
 
+  const iconShare = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 8a3 3 0 1 0-2.83-4H15a3 3 0 0 0 .17 1L8.9 8.64A3 3 0 0 0 7 8a3 3 0 1 0 1.9 5.36L15.17 17A3 3 0 0 0 15 18a3 3 0 1 0 1.1-2.31L9.83 12a3.2 3.2 0 0 0 0-1.99l6.28-3.68A2.99 2.99 0 0 0 18 8Z" fill="currentColor"/></svg>';
+
   const platforms = [
     { key: 'email', label: 'Email' },
     { key: 'wechat', label: 'WeChat' },
@@ -374,6 +376,18 @@
     const data = shareData(target);
     const widget = document.createElement('div');
     widget.className = 'share-widget ' + (target.dataset.shareVariant || 'share-widget--inline');
+
+    if (target.dataset.shareMode === 'single') {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'share-button';
+      button.setAttribute('aria-label', 'Share this page');
+      button.innerHTML = iconShare + '<span>Share</span>';
+      button.addEventListener('click', () => openPoster('share', data));
+      widget.appendChild(button);
+      target.replaceWith(widget);
+      return;
+    }
 
     const dock = document.createElement('div');
     dock.className = 'share-dock';
