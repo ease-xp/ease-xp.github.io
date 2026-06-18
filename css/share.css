@@ -91,7 +91,12 @@
 }
 
 .share-context .meta {
+  min-width: 0;
   margin: 0;
+}
+
+.share-context .share-widget {
+  flex: none;
 }
 
 .pub-item[id] {
@@ -236,9 +241,9 @@
 
 @media (max-width: 760px) {
   .share-context {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: .9rem;
+    align-items: center;
+    flex-direction: row;
+    gap: .75rem;
   }
 
   .share-poster__panel {
