@@ -212,10 +212,19 @@ h1, h2, h3, h4 {
   font-size: clamp(2.1rem, 3.6vw, 3.2rem);
   font-weight: 600;
   max-width: 37ch;
-  margin-bottom: .55em;
+  margin-bottom: .32em;
 }
 .hero h1 .accent { color: var(--amber-soft); font-style: italic; font-weight: 400; }
 
+.hero__subtitle {
+  max-width: 45ch;
+  margin: 0 0 1.05rem;
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.55rem);
+  font-weight: 500;
+  line-height: 1.32;
+  color: rgba(246,237,226,.9);
+}
 .hero__lead {
   max-width: 48ch;
   font-size: clamp(1.05rem, 1.6vw, 1.22rem);
@@ -607,6 +616,12 @@ h1, h2, h3, h4 {
     line-height: 1.08;
     overflow-wrap: normal;
     word-break: normal;
+  }
+  .hero__subtitle {
+    max-width: 100%;
+    font-size: clamp(1.05rem, 4.4vw, 1.22rem);
+    line-height: 1.36;
+    margin-bottom: .95rem;
   }
   .hero .eyebrow {
     font-size: .68rem;
